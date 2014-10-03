@@ -1,0 +1,3 @@
+10141003 fix Release mode include /lib,not /statlib
+
+20140523 add System Path catch but not set

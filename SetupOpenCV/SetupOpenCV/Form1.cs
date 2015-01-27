@@ -210,19 +210,25 @@ namespace SetupOpenCV
 
             ///// Load static library (no *d.lib) 
             ///// BUT seem NOT use here, Because in Release mode (in program)
-            ///// this place still usd /lib (not *d.lib)
+            ///// this place still usd /lib (not /staticlib)
+            ///// and setting is same with debug setting
             foreach (string fname in System.IO.Directory.GetFiles(ProjXml.LibraayPath_sD))
             {
                 String[] words = fname.Split('\\');
                 foreach (String sbfname in words)
                 {
-                    if (!sbfname.EndsWith("d.lib"))
+                    //if (!sbfname.EndsWith("d.lib"))
+                    //{
+                    //    if (sbfname.EndsWith(".lib"))
+                    //    {
+                    //        ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                    //        ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                    //    }
+                    //}
+                    if (sbfname.EndsWith("d.lib"))
                     {
-                        if (sbfname.EndsWith(".lib"))
-                        {
-                            ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
-                            ProjXml.Library_File_sDa.Add(sbfname.Trim());
-                        }
+                        ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                        ProjXml.Library_File_sDa.Add(sbfname.Trim());
                     }
                 }
             }

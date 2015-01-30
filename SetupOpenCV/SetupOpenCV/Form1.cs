@@ -217,19 +217,27 @@ namespace SetupOpenCV
                 String[] words = fname.Split('\\');
                 foreach (String sbfname in words)
                 {
-                    //if (!sbfname.EndsWith("d.lib"))
-                    //{
-                    //    if (sbfname.EndsWith(".lib"))
-                    //    {
-                    //        ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
-                    //        ProjXml.Library_File_sDa.Add(sbfname.Trim());
-                    //    }
-                    //}
-                    if (sbfname.EndsWith("d.lib"))
+                    if (!sbfname.EndsWith("d.lib"))
                     {
-                        ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
-                        ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                        if (sbfname.StartsWith("opencv_") )
+                        {
+                            ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                            ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                        }
+                        //// this will include 3rd part library
+                        //if (sbfname.EndsWith(".lib"))
+                        //{
+                        //    ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                        //    ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                        //}
                     }
+                    #region Include Library File , use *d.lib
+                    //if (sbfname.EndsWith("d.lib"))
+                    //{
+                    //    ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                    //    ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                    //}
+                    #endregion
                 }
             }
             

@@ -182,7 +182,11 @@
             this.groupBox_GetCVPath.Size = new System.Drawing.Size(755, 122);
             this.groupBox_GetCVPath.TabIndex = 8;
             this.groupBox_GetCVPath.TabStop = false;
+<<<<<<< HEAD
             this.groupBox_GetCVPath.Text = "3. Where is the OpenCV Folder ? (Untial see \"Build\" Folder)";
+=======
+            this.groupBox_GetCVPath.Text = "3. Where is the OpenCV Folder ? (Until see \"Build\" Folder)";
+>>>>>>> origin/master
             // 
             // groupBox2
             // 

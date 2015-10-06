@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 10141003 fix Release mode include /lib,not /statlib
+=======
+20150127 fix Release mode include *d.lib, not *.lib
+
+20141003 fix Release mode include /lib,not /statlib
+>>>>>>> origin/master
 
 20140523 add System Path catch but not set

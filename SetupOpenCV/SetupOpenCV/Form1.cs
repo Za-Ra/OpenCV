@@ -210,7 +210,12 @@ namespace SetupOpenCV
 
             ///// Load static library (no *d.lib) 
             ///// BUT seem NOT use here, Because in Release mode (in program)
+<<<<<<< HEAD
             ///// this place still usd /lib (not *d.lib)
+=======
+            ///// this place still usd /lib (not /staticlib)
+            ///// and setting is same with debug setting
+>>>>>>> origin/master
             foreach (string fname in System.IO.Directory.GetFiles(ProjXml.LibraayPath_sD))
             {
                 String[] words = fname.Split('\\');
@@ -218,12 +223,33 @@ namespace SetupOpenCV
                 {
                     if (!sbfname.EndsWith("d.lib"))
                     {
+<<<<<<< HEAD
                         if (sbfname.EndsWith(".lib"))
+=======
+                        if (sbfname.StartsWith("opencv_") )
+>>>>>>> origin/master
                         {
                             ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
                             ProjXml.Library_File_sDa.Add(sbfname.Trim());
                         }
+<<<<<<< HEAD
                     }
+=======
+                        //// this will include 3rd part library
+                        //if (sbfname.EndsWith(".lib"))
+                        //{
+                        //    ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                        //    ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                        //}
+                    }
+                    #region Include Library File , use *d.lib
+                    //if (sbfname.EndsWith("d.lib"))
+                    //{
+                    //    ProjXml.Library_File_sD = ProjXml.Library_File_sD + sbfname + ";";
+                    //    ProjXml.Library_File_sDa.Add(sbfname.Trim());
+                    //}
+                    #endregion
+>>>>>>> origin/master
                 }
             }
             
